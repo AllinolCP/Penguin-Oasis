@@ -1,0 +1,51 @@
+Oasis Information:
+
+Login Port: 9875
+Game Port: 3724
+
+#####Manager Changer Packets###########
+%xt%s%oasis#sethue%7808%-178% // Hue Change
+%xt%setvalue%7808%6808%h%-178% // Sets Value for Hue
+%xt%s%oasis#setface%7808%2% //Face Change
+%xt%setvalue%7808%6808%f%2%. // Sets Value for Face
+%xt%s%oasis#setvalue%7808%scg%3163A4%ffffff%. // Status Color Glow
+%xt%setvalue%7808%6808%scg%3163A4%ffffff% // Sets value for status color glow
+%xt%s%oasis#setvalue%7808%ca%1% // Can Add User
+%xt%setvalue%7808%6808%p%29%. // Sets Value for player
+%xt%s%oasis#setvalue%7808%i%1% // Igloo allow
+%xt%s%oasis#setvalue%7808%ac%1% // Allow Clone
+
+########Like Sytem Packets#########
+%xt%s%oasis#like%505%3933%
+%xt%like%505%3933%24%
+
+########Outfit Save Packets#########
+%xt%s%outfit#osave%7808%333333%0%0%0%0%0%0%0%Jakeiscool%
+%xt%osave%7808%78606499|Jakeiscool|0|0|0|0|0|0|0|333333%
+%xt%s%outfit#owear%-1%333333%0%0%0%0%0%0%0% //Gets Clothes ID then returns value with "oset"
+%xt%oset%7808%6808%0%0%0%0%0%0%0%333333% //Gets Value for outfit and sets it
+%xt%s%outfit#odelete%-1%78606499% // Deletes current users saved outfits
+
+#########BFF & Marry Sytem Packets#######
+%xt%request%506%bff%204%Jake1%ed910b2ec091c7513df58e56aab82b8c%
+%xt%s%relationship#accept%506%bff%204%Jake1%ed910b2ec091c7513df58e56aab82b8c%
+%xt%accept%506%6808%2%204%Jake1%.%xt%accept%506%204%2%6808%Shawn%
+%xt%s%relationship#divorce%506% 
+%xt%divorce%506%6808%.%xt%divorce%506%6808%
+
+########Snowball Server Packets#########
+%xt%pgu%980%%.%xt%score%980%None%.%xt%note%980%Notice%This is the safe room. Nobody can throw snowballs or kill each other here.%.%xt%ap%980%6808|Shawn|1|f0f0d8|0|0|0|0|0|0|0|0|360|250|0|1|0|0|0|None|None%.%xt%jr%980%100%11457|Franifrani|1|333333|0|0|0|0|0|0|0|0|95|320|0|1|0|0|0|0|100%6808|Shawn|1|f0f0d8|0|0|0|0|0|0|0|0|360|250|0|1|0|0|0|None|None%.%xt%snpc%980%100%.
+%xt%gmsi%980%100%0%70%22%10%1%100%0%.%xt%health%980%100%. // Heal status
+%xt%z%heal%980%. // Heal Packet
+xt%throw%980%4641%503%358%3%.%xt%sp%980%1100%469%332%0%.%xt%sp%980%4426%280%203%0%.%xt%throw%980%10498%618%321%0%. // Throw packets
+%xt%z%throw%980%232%391%
+%xt%gcfm%980%135.0%.%xt%note%980%Alert%Your score has been reset to 0, but your earned credits (so far) have been added to your account to use in the snowball store.%.%xt%score%980%0%.%xt%note%980%Sorry%You need more credits!%
+%xt%z%buy%980%8%
+
+
+
+
+
+
+
+

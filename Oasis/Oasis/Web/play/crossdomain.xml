@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+	
+	<!-- Production/Live -->
+	<allow-access-from domain="*.oasis.ps" to-ports="*" />
+  
+	<!--Development/Testing -->
+	<allow-access-from domain="*.oasis.private" to-ports="*" />
+	<allow-access-from domain="oasis" to-ports="*" />
+  
+</cross-domain-policy>
+<!-- /oasis/website/trunk/global/crossdomain.xml -->

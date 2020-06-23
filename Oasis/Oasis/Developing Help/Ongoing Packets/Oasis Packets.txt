@@ -1,0 +1,70 @@
+			########OASIS PACKET############
+			
+#Playercard Attributes
+			
+"oasis#setstatus" => "handleUpdateStatus",
+			
+"oasis#setvalue" => "handleSetValue",
+		
+"oasis#setface" => "handleSetFace",
+			
+"oasis#sethue" => "handleSetHue",
+			
+"oasis#like"  => "handleLikes",
+			
+"oasis#transform" => "handleTransformation",
+			
+"oasis#setpa" => "handleSetPlayerAttribute",
+	
+		
+			
+#Like System "oasis#likes" is apart
+			
+"like#truncate" => "handleTrunCate", //Not Used
+"like#delete" => "handleDeleteLikes", //Not Used
+	
+		
+			
+#BFF/Marry System
+			
+"relationship#accept" => "handleRelationAccept",
+			
+"relationship#divorce" => "handleRelationDivorce",
+			
+"relationship#request" => "handleRelationRequest",
+	
+		
+			
+#Outfit System
+			
+"outfit#osave" => "handleOutfitSave",
+			
+"outfit#owear" => "handleWearedOutfit", 
+		
+"outfit#odelete" => "handleDeleteOutfit",
+
+			
+			
+#Staff System
+			
+"o#create_ban" => "handleCreateBan",
+			
+"o#kick" => "handleUserKick",
+			
+"o#warn" => "handleWarn",
+			
+"o#pname" => "handleRemoveName",
+			
+"o#alter_perm" => "handleAlterPerm",
+			
+"o#move_player" => "handleMovePlayer",
+		
+"o#disable" => "handleDisable",
+		
+	
+			
+#EXTRA
+			
+"service#setvalue" => "handleSetV"
+	//This can be found in the Interface		
+			#######END OF OASIS PACKETS########

@@ -1,0 +1,24 @@
+﻿<flash_project name="~login" version="1">
+	<project_file path="./~login.fla" filetype="fla" profile="" def_file="true"/>
+	<project_file path="./com/clubpenguin/ui/views/AbstractViewManager.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/IEventDispatcher.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/ui/views/IView.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/ViewManager.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/URLUtils.as" filetype="as"/>
+	<project_file path="./mx/events/EventDispatcher.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/hybrid/HybridMovieClipLoader.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/Delegate.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/hybrid/AS3Manager.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/ui/views/AbstractView.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/EventDispatcher.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/PlayerSelection.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/LocalData.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/Tools.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/ui/PaperDoll.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/BaseLoginView.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/Keyboard.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/PlayerLogin.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/WorldSelection.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/MoreServers.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/NewPlayer.as" filetype="as"/>
+</flash_project>

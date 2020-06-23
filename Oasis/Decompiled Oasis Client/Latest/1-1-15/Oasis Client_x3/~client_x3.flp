@@ -1,0 +1,6 @@
+﻿<flash_project name="~client_x3" version="1">
+	<project_file path="./~client_x3.fla" filetype="fla" profile="" def_file="true"/>
+	<project_file path="./ps/oasis/Oasis.as" filetype="as"/>
+	<project_file path="./ps/oasis/OasisLogger.as" filetype="as"/>
+	<project_file path="./ps/oasis/JSON.as" filetype="as"/>
+</flash_project>

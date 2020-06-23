@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- EN -->
+<startscreen>
+	
+	<backgrounds>
+		<!-- in constant rotation -->
+
+		<background>
+			<url>card_jitsu_fire.swf</url>
+			<probability>100</probability>
+			<nolink/>
+		</background>
+		
+
+		<!-- /constant rotation -->		
+		
+
+		<!-- external linking content -->		
+				
+		
+		<!-- /external linking content -->
+		
+	</backgrounds>
+	
+	<messages>
+	</messages>
+
+</startscreen>

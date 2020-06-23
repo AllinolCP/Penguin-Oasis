@@ -1,0 +1,89 @@
+.overlay-bg {
+	z-index:1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height:100%;
+	width: 100%;
+	background: #000; /* fallback */
+	background: rgba(0,0,0,0.75);
+}
+.overlay-content {
+	background:#fff;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	overflow:hidden;
+	padding: 1%;
+	width: 40%;
+	position: relative;
+	top: 15%;
+	left: 50%;
+	margin: 0 0 0 -20%; /* add negative left margin for half the width to center the div */
+	box-shadow: 0px 0px 7px #fff;
+}
+
+	.transTile {
+		display:inline-block;
+		margin:5px;
+		border:1.2px solid #CCCCCC;
+		border-radius: 8px;
+		-moz-box-shadow: 0 0 5px #fff;
+		-webkit-box-shadow: 0 0 5px #fff;
+		box-shadow: 0px 0px 5px #fff;
+	}
+	.modTools {
+		background: #fff;
+		width: 150px;
+		position: fixed;
+		right: 0;
+		top: 90px;
+		z-index: 150;
+	}
+	.modToolsContainer {
+		-webkit-box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+		-moz-box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+		box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+		border: 1px solid rgba(23,24,26,0.15);
+		-webkit-border-top-left-radius: 5px;
+		-webkit-border-bottom-left-radius: 5px;
+		-moz-border-radius-topleft: 5px;
+		-moz-border-radius-bottomleft: 5px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	.modToolsTitle {
+		color: #000;
+		font-size: 15px;
+		height: 44px;
+		line-height: 44px;
+		text-align: center;
+		border-bottom: 1px solid rgba(23,24,26,0.15);
+		background-image: linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+		background-image: -o-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+		background-image: -moz-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+		background-image: -webkit-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+		background-image: -ms-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+		background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #F7F4F4) );
+	}
+	.boxTitle {
+		font-size: 12px;
+		height: 41px;
+		line-height: 41px;
+		text-align: center;
+		border-bottom: 1px solid rgba(23,24,26,0.15);
+	}
+	.inputBox {
+		padding: 10px;
+		border-bottom: 1px solid rgba(23,24,26,0.15);
+	}
+	.inputBoxN {
+		font-size: 12px;
+		text-align: center;
+		border-bottom: 1px solid rgba(23,24,26,0.15);
+	}
+		.recaptchaImg img {
+			border-radius:5px;-webkit-box-shadow: 0px 0px 5px 2px rgba(115,115,115,1);
+			-moz-box-shadow: 0px 0px 5px 2px rgba(115,115,115,1);
+			box-shadow: 0px 0px 5px 2px rgba(115,115,115,1);
+		}

@@ -1,0 +1,28 @@
+%xt%ap%506%10887|Cleopatra003|1|FFCC00|1353|113|3026|277|336|380|0|9210|0|0|0|1|0|0|0|{"f":7,"h":2,"l":21,"p":31,"s":"","r":[0,0,""],"sc":"492BAF","sg":"83D8C2"}|247815|16|{"b":["",""],"n":["",""],"s":0,"r":"F42F91","sc":"","x":0}|0|1095|0%
+
+
+%xt%s%outfit#osave%506%996600%11436%11676%317%4640%0%6104%0%fuckone%.
+
+
+%xt%osave%506%
+84012522|yolo|6104|11436|317|11676|0|4640|0|996600%.
+
+84012522|yolo|6104|11436|317|11676|0|4640|0|996600
+
+    currentSavedClothes[Number(_loc1[0])] = {uniqueID: _loc1[0], outfitName: _loc1[1], mood: _loc1[8], color: _loc1[9], head: _loc1[3], face: _loc1[5], neck: _loc1[4], body: _loc1[7], hand: _loc1[6], feet: _loc1[2]};
+
+
+84012522 = UniqueID 
+Yolo = OutfitName
+6104 = Feet
+11436 = Head
+317 = Neck
+11676 = Head
+0 = face
+4640 = Body
+0 = Hand
+996600 = Color 
+
+
+%xt%s%outfit#owear%-1%f0f0d8%11436%11676%317%4640%0%6104%0%
+%xt%oset%509%6808%6104%11436%317%11676%0%4640%0%f0f0d8%.

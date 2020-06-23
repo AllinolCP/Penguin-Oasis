@@ -1,0 +1,4 @@
+http://media1.clubpenguin.com/play/v2/games/smoothie/lang/en/locale.swf
+http://media1.clubpenguin.com/play/v2/games/smoothie/mainBGM.swf
+http://media1.clubpenguin.com/play/v2/games/smoothie/smoothie.swf
+http://media1.clubpenguin.com/play/v2/games/smoothie/splashBGM.swf

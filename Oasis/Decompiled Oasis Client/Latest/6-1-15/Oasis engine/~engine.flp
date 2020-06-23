@@ -1,0 +1,16 @@
+﻿<flash_project name="~engine" version="1">
+	<project_file path="./~engine.fla" filetype="fla" profile="" def_file="true"/>
+	<project_file path="./com/clubpenguin/engine/pathfinding/PathEngine.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/pathfinding/WaypointManager.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/pathfinding/Waypoint.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/Tweener.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/TweenListObj.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/AuxFunctions.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/PropertyInfoObj.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/Equations.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/SpecialProperty.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/SpecialPropertyModifier.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/engine/tweener/SpecialPropertySplitter.as" filetype="as"/>
+	<project_file path="./com/gskinner/geom/ColorMatrix.as" filetype="as"/>
+	<project_file path="./mx/utils/Delegate.as" filetype="as"/>
+</flash_project>

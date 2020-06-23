@@ -1,0 +1,20 @@
+﻿<flash_project name="~startscreen" version="1">
+	<project_file path="./~startscreen.fla" filetype="fla" profile="" def_file="true"/>
+	<project_file path="./com/clubpenguin/login/messages/MessageManager.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/IEventDispatcher.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/EventDispatcher.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/Delegate.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/messages/Message.as" filetype="as"/>
+	<project_file path="./mx/events/EventDispatcher.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/hybrid/HybridMovieClipLoader.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/hybrid/AS3Manager.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/URLUtils.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/OverlayManager.as" filetype="as"/>
+	<project_file path="./mx/utils/Delegate.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/Tools.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/ui/views/IView.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/ui/views/AbstractView.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/views/StartScreen.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/BackgroundManager.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/login/StartUI.as" filetype="as"/>
+</flash_project>

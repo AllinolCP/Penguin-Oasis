@@ -1,0 +1,29 @@
+######Moderator Tools Packets (ONGOING)##########
+//Remove Name
+18:29:50 [Debug] > Received %xt%s%o#pname%1%150%
+18:29:51 [Warn] > Method for s%o#pname doesn't exist/has not been set
+
+18:23:52 [Debug] > Received %xt%s%o#alter_perm%1%150%action%
+18:23:52 [Warn] > Method for s%o#alter_perm doesn't exist/has not been set
+
+//Transformations
+[Debug] > Received %xt%s%o#alter_perm%1%150%transform%
+[Warn] > Method for s%o#alter_perm doesn't exist/has not been set
+
+//Move Player
+18:27:26 [Debug] > Received %xt%s%o#move_player%1%150%454%346%
+18:27:26 [Warn] > Method for s%o#move_player doesn't exist/has not been set
+
+//Disable Area
+18:28:12 [Debug] > Received %xt%s%o#disable%1%150%419%400%
+18:28:12 [Warn] > Method for s%o#disable doesn't exist/has not been set
+
+
+Member = 247815
+Moderator = 248447
+Admin = 262143
+
+Example of an Admins Strings (Tybone10)
+ 5|Tybone10|1|333333|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|{"f":0,"i":0,"h":0,"ca":0,"l":148,"p":28,"s":"WELCOME25","r":[1,2541,"elise"],"sc":"FFFFFF","sg":"000000"}|262143|2047|{"b":["0","ff0000"],"n":["0","000000"],"s":0,"r":"0","rc":"ff0000","sc":"00ff00","x":0}|0|5035500|
+
+http://prntscr.com/70w1vt

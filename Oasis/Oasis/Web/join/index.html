@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!--Basic Metas-->
+    <meta charset="utf-8">
+    <title>Join | Mirai</title>
+	<meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!--Mobile Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--Stylesheets-->
+    <link rel="shortcut icon" href="http://c.mirai.so/media/other/favicon.png">
+    <link rel="stylesheet" type="text/css" href="http://c.mirai.so/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://c.mirai.so/css/main.css">
+    <link rel="stylesheet" type="text/css" href="http://c.mirai.so/css/popup.css">
+	
+	<style>
+		.recaptchaImg img {
+			border-radius:5px;-webkit-box-shadow: 0px 0px 5px 2px rgba(115,115,115,1);
+			-moz-box-shadow: 0px 0px 5px 2px rgba(115,115,115,1);
+			box-shadow: 0px 0px 5px 2px rgba(115,115,115,1);
+		}
+	</style>
+	<script type='text/javascript'>
+	function initMNX() {
+		MNX.addMNXCommand('MNX_CMD_REGISTER_USER', 'add_user');
+		document.getElementById('preLoader').style.display = 'none';
+		document.getElementById("form-username").focus();
+	}
+	var canJoin = true;
+	function joinNow() {
+		if (canJoin == false)
+			return alert('Please wait while your previous account is created');
+		var username = document.getElementById('form-username').value;
+        var password = document.getElementById('form-password').value;
+        var cpassword = document.getElementById('form-confirm-password').value;
+        var email = document.getElementById('form-email').value;
+        var recaptcha_challenge_field = document.getElementById('recaptcha_challenge_field').value;
+        var recaptcha_response_field = document.getElementById('recaptcha_response_field').value
+        if (username.length < 4 || username.length > 15) {
+            document.getElementById('errorBox').style.display = 'block';
+            document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Your penguin name must be between 4-15 characters long.</div>';
+            return false;
+        }
+        if (password.length < 5) {
+            document.getElementById('errorBox').style.display = 'block';
+            document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Your password must be at least 5 characters long</div>';
+            return false;
+        }
+        if (password != cpassword) {
+            document.getElementById('errorBox').style.display = 'block';
+            document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Your passwords do not match!</div>';
+            return false;
+        }
+        if (/^[0-9a-zA-Z.<;:\s]+$/.test(username) != true) {
+            document.getElementById('errorBox').style.display = 'block';
+            document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Please enter a valid username</div>';
+            return false;
+        }
+        if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email) != true) {
+            document.getElementById('errorBox').style.display = 'block';
+            document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Please enter a valid e-mail address</div>';
+            return false;
+        }
+		document.getElementById('errorBox').style.display = 'block';
+        document.getElementById('errorBox').innerHTML = '<div class="alert alert-info fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Please wait:</strong> Please wait while we attempt to create your account</div>';
+		canJoin = false;
+		MNX.startNewRequest({ playerName: username, password: password, confirmPassword: cpassword, playerEmail: email, recaptcha_response: recaptcha_response_field, recaptcha_challenge: recaptcha_challenge_field }, 'MNX_CMD_REGISTER_USER', handleRegisterUser);
+	}
+	function handleRegisterUser(isSuccess, responseData) {
+		if (!isSuccess) {
+			document.getElementById('errorBox').style.display = 'block';
+			document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> There was an issue registering your account. Try again later.</div>';
+			Recaptcha.reload();
+			return false;
+		} else {
+			if (responseData['success'] != true) {
+				canJoin = true;
+				switch (responseData['errorNum']) {
+					case 9389:
+						document.getElementById('errorBox').style.display = 'block';
+						document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Please enter a correct captcha!</div>';
+						Recaptcha.reload();
+						return true;
+					case 5284:
+						document.getElementById('errorBox').style.display = 'block';
+						document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> That penguin name is taken, please pick another name.</div>';
+						Recaptcha.reload();
+						return true;
+					case 1934:
+						document.getElementById('errorBox').style.display = 'block';
+						document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Please enter a valid e-mail.</div>';
+						Recaptcha.reload();
+						return false;
+					case 1053:
+						document.getElementById('errorBox').style.display = 'block';
+						document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> Please enter a valid username</div>';
+						Recaptcha.reload();
+						return false;
+				}
+			} else {
+				document.getElementById('errorBox').style.display = 'block';
+				document.getElementById('errorBox').innerHTML = '<div class="alert alert-success fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Success!</strong> ' + responseData['username'] + ', your account has been created (ID: ' + responseData['user_id'] + ')! Click <b><u><a href="http://play.mirai.so?auto=true&username=' + responseData['username'] + '&password=' + document.getElementById('form-password').value + '">here</a></u></b> to play now! </div>';
+				document.getElementById('contact-form').style.display = 'none';
+				return true;
+			}
+		}
+		document.getElementById('errorBox').style.display = 'block';
+		document.getElementById('errorBox').innerHTML = '<div class="alert alert-error fade in"><button data-dismiss="alert" class="close" type="button">×</button><strong>Error!</strong> There was an issue registering your account. Try again later.</div>';
+		Recaptcha.reload();
+		return false;
+	}
+	</script>
+    
+</head>
+<body onload='showRecaptcha();'>
+    <div id="infobar">
+        <div class="container">
+             <span>Hello! Welcome to Mirai. You can see our latest news<a href="http://blog.mirai.so"><strong> here</strong></a></span>
+            <ul class="social">
+              <li><a href="https://www.facebook.com/miraidotso"><div class="social-facebook"></div></a></li>
+                 <li><a href="http://twitter.com/mirai_so"><div class="social-twitter"></div></a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="toggle"></div>
+    </div><!--#infobar-->
+
+
+
+    <div id="header" class="homepage">
+        <div class="container">
+           <div class="logo-wrapper">
+                <div class="logo"><a href="http://mirai.so/index.html"><img src="http://c.mirai.so/img/logo.png" alt="" /></a></div>
+                <div class="slogan"><h2>welcome to the future</h2></div>
+                <div class="clearfix"></div>
+            </div>
+            <div id="mobile-menu"></div><!--#mobile-menu-->
+            <ul id="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="http://blog.mirai.so">Blog</a></li>
+                <li class="current"><a href="http://me.mirai.so/join">Join</a></li>
+                <li><a href="http://play.mirai.so">Play</a>
+                    <ul>
+                        <li><a href="http://play.mirai.so">Small Screen</a></li>
+                        <li><a href="http://play.mirai.so/large">Large Screen</a></li>     
+                    </ul>   
+                </li>
+                <li><a href="http://me.mirai.so">Panel</a></li>
+                <li><a href="#">Misc</a>
+                	<ul>
+                		<li><a href="http://mirai.so/commands.html">Commands</a></li>
+                		<li><a href="http://mirai.so/rules.html">Rules</a></li>
+                		<li><a href="http://mirai.so/faq.html">FAQ</a></li>
+                	</ul>
+                </li>
+            </ul><!--#menu-->
+        </div><!--.container-->
+    </div><!--#header-->
+
+
+
+    <div id="page-info">
+        <div class="container">
+            <div class="row">
+                <div class="page-title span12">
+                    <h1><a href="http://me.mirai.so/join">Join Mirai</a></h1>
+                </div>
+            </div>
+        </div><!--.container-->
+    </div><!--#pageinfo-->
+
+
+
+    <div id="content">
+        <div class="container">
+
+            <div class="row">
+                <div class="span12">
+                    <h1>Register for Mirai</h1>
+                    <p>Mirai has a lot of features for you to enjoy and have fun with. If you would like to play Mirai, simply fill out and submit the form below.</p>
+                </div>
+            </div>
+	<div id='preLoader' class="overlay-bg">
+		<div class="overlay-content">
+			<center>
+				<h1>Loading...</h1>
+				<p>Please wait while the panel loads...</p>
+			</center>
+		</div>
+	</div>
+
+            <div class="seperator"></div>
+
+            <div class="row">
+				<center><div id='errorBox' style='width:500px !important;'></div><br/></center>
+                <div id="contact-info" class="span3">
+                   <h4><a href="http://support.mirai.so" style="text-decoration:underline;">Need help? Click here</a></h4>
+                    <p>
+                        We are always willing to help, but please be aware that our team is not very large, so it will take awhile to answer all tickets. We also ask that you search the site for any answers before sending a ticket. We have set up a helpful <a href="http://mirai.so/faq.html">F.A.Q</a> with questions and answers that may be able to help you. Check that out before sending a ticket.
+                    </p>
+                </div>
+                <center>
+                <div id="contact-form" class="span9">
+                    <form id="contactForm" autocomplete='off'>
+                        <h4>Create an Account</h4>
+                        <div class="form-fullname">
+                            <strong>Penguin Name</strong>
+                            <input type="text" id="form-username" name="form-username" />
+                        </div>
+                        <div class="form-passwordl">
+                            <strong>Password</strong>
+                            <input type="password" id="form-password" name="form-password" />
+                        </div>
+                        <div class="form-password">
+                            <strong>Confirm Password</strong>
+                            <input type="password" id="form-confirm-password" name="form-confirm-password" />
+                        </div>
+                        <div class="form-email">
+                            <strong>*E-mail Address</strong>
+                            <input type="text" id="form-email" name="form-email" />
+                        </div>
+						<div id="reCaptchaDiv" style="display:none;margin-bottom:57px;">
+						<div id="recaptcha_image" onclick='if(confirm("Would you like to get a new image?")) Recaptcha.reload();' class='recaptchaImg' style='width: 300px; height: 57px;position:relative;right:35px;top:10px;margin-bottom:-25px;'></div></div>
+                        <div class="form-fullname">
+                            <strong>Enter the text</strong>
+                            <input type="text" id="recaptcha_response_field" name="recaptcha_response_field" />
+                        </div>
+                        <br>
+                        <br/>
+                        <br/>
+						<div id='joinBtn' height='100px'>
+							<button class="btn btn-large" type="submit" onClick="joinNow();">Join Now</button>
+						</div>
+                    </form><!--form.#contact_form-->
+					<p>*Please note we <b>do</b> use your e-mail for things. If you forgot your password and you used a fake e-mail, we can't help you.</p>
+                </div>
+                </center>
+            </div><!--.row-->
+
+        </div><!--.container-->
+    </div><!--#content-->
+
+
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="span6">
+                    <h4>ABOUT US</h4>
+                    <p><strong>Mirai</strong> is a new private server, and our reasons for creating Mirai are simple: we want to make a server that can be enjoyable for all. Our goal is to not only please all of our users, but to be innovative as well. Mirai will have many features, but not so much as to overwhelm anyone, including ourselves.</p>
+                </div>
+
+            </div><!--.row-->
+        </div><!--.container-->
+    </div><!--#footer-->
+
+
+
+    <div id="copyrights">
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    <p><a href="http://mirai.so">mirai</a> 2013</p>
+                </div>
+                <div class="logo2 span6">
+                    <p><img src="http://c.mirai.so/img/logo.png" alt="" /></p>
+                </div>
+            </div><!--.row-->
+        </div><!--.container-->
+    </div><!--#copyrights-->
+
+
+
+    <!--Scripts-->
+    <script type="text/javascript" src="http://c.mirai.so/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/jquery/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/jquery/jquery.bgpos.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/jquery/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/main.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/demo.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/mobilemenu.min.js"></script>
+    <script type="text/javascript" src="http://c.mirai.so/js/mnx.js"></script>
+	<script data-cfasync="false" type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+	<script data-cfasync="false" type="text/javascript">
+		function showRecaptcha() {
+			Recaptcha.create("6LfK5esSAAAAAGqCiA5H2t5l-2AW8xBSCPkr-zUz", 'reCaptchaDiv', {
+				theme: 'custom',
+				callback: initMNX,
+				custom_theme_widget: 'reCaptchaDiv'
+			});
+		}
+	 </script>
+
+</body>
+</html>

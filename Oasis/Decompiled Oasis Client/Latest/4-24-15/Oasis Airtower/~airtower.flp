@@ -1,0 +1,8 @@
+﻿<flash_project name="~airtower" version="1">
+	<project_file path="./~airtower.fla" filetype="fla" profile="" def_file="true"/>
+	<project_file path="./com/clubpenguin/net/Airtower.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/net/IConnection.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/net/Connection.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/util/QueryParams.as" filetype="as"/>
+	<project_file path="./com/clubpenguin/crypto/MD5.as" filetype="as"/>
+</flash_project>
